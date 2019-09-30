@@ -5,8 +5,8 @@
     <classes>
       <class name="com.apitesting.testcases.GetAPITest">
         <methods>
+          <include name="getApiTestWithHeader"/>
           <include name="setUp"/>
-          <include name="getApiTest"/>
         </methods>
       </class> <!-- com.apitesting.testcases.GetAPITest -->
     </classes>

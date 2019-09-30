@@ -5,6 +5,11 @@ import java.util.Properties;
 
 public class TestBase {
 	public Properties properties;
+	public static final int HTTP_STATUS_200 = 200;
+	public static final int HTTP_STATUS_201 = 201;
+	public static final int HTTP_STATUS_400 = 400;
+	public static final int HTTP_STATUS_401 = 401;
+	
 
 	public TestBase() {
 		try {
