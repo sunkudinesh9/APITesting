@@ -2,6 +2,7 @@ package com.apitesting.testcases;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.http.Header;
 import org.apache.http.client.ClientProtocolException;
@@ -50,7 +51,7 @@ public class GetAPITest extends TestBase {
 		// Converting String to json object
 		JSONObject jsonObject = new JSONObject(stringResponse);
 		System.out.println("JsonResponse-----> :" + jsonObject);
-		String page = TestUtils.getVAlueByJpath(jsonObject, "/page");
+		String page = TestUtils.getVAlueByJpath(jsonObject, "/per_page");
 		System.out.println("Page: " + page);
 
 		// Getting the headers
@@ -70,8 +71,8 @@ public class GetAPITest extends TestBase {
 		restClient = new RestClint();
 
 		// Adding Headers to hash map
-		HashMap<String, String> headerMaps = new HashMap<String, String>();
-		headerMap.put("Content-Type", "application/json");
+		Map<String, String> headerMaps = new HashMap<String, String>();
+		headerMaps.put("Content-Type", "application/json");
 		closableHttpResponse = restClient.get(url, headerMaps);
 
 		// Getting status code
