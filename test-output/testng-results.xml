@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1658" started-at="2019-10-01T23:06:50 IST" finished-at="2019-10-01T23:06:51 IST">
+  <suite name="Default suite" duration-ms="1553" started-at="2019-10-05T15:25:44 IST" finished-at="2019-10-05T15:25:46 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1658" started-at="2019-10-01T23:06:50 IST" finished-at="2019-10-01T23:06:51 IST">
-      <class name="com.apitesting.testcases.GetAPITest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.apitesting.testcases.GetAPITest@61f8bee4]" name="setUp" is-config="true" duration-ms="5" started-at="2019-10-01T23:06:50 IST" finished-at="2019-10-01T23:06:50 IST">
+    <test name="Default test" duration-ms="1553" started-at="2019-10-05T15:25:44 IST" finished-at="2019-10-05T15:25:46 IST">
+      <class name="com.apitesting.testcases.GetAPITestPost">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.apitesting.testcases.GetAPITestPost@61f8bee4]" name="setUp" is-config="true" duration-ms="0" started-at="2019-10-05T15:25:44 IST" finished-at="2019-10-05T15:25:44 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getApiTestWithOutHeaders()[pri:1, instance:com.apitesting.testcases.GetAPITest@61f8bee4]" name="getApiTestWithOutHeaders" duration-ms="1372" started-at="2019-10-01T23:06:50 IST" finished-at="2019-10-01T23:06:51 IST">
+        <test-method status="PASS" signature="getHttpPost()[pri:0, instance:com.apitesting.testcases.GetAPITestPost@61f8bee4]" name="getHttpPost" duration-ms="1522" started-at="2019-10-05T15:25:44 IST" finished-at="2019-10-05T15:25:46 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getApiTestWithOutHeaders -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.apitesting.testcases.GetAPITest@61f8bee4]" name="setUp" is-config="true" duration-ms="0" started-at="2019-10-01T23:06:51 IST" finished-at="2019-10-01T23:06:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getApiTestWithHeader()[pri:2, instance:com.apitesting.testcases.GetAPITest@61f8bee4]" name="getApiTestWithHeader" duration-ms="247" started-at="2019-10-01T23:06:51 IST" finished-at="2019-10-01T23:06:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getApiTestWithHeader -->
-      </class> <!-- com.apitesting.testcases.GetAPITest -->
+        </test-method> <!-- getHttpPost -->
+      </class> <!-- com.apitesting.testcases.GetAPITestPost -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

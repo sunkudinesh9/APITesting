@@ -24,7 +24,6 @@ public class GetAPITestPost extends TestBase {
 	String url;
 	RestClint restClient;
 	CloseableHttpResponse closableHttpResponse;
-	HashMap<String, String> headerMap;
 
 	@BeforeMethod
 	public void setUp() throws ClientProtocolException, IOException {
@@ -47,15 +46,17 @@ public class GetAPITestPost extends TestBase {
 		String payloadString = objectMapper.writeValueAsString(users);
 		System.out.println("PayLoad: " + payloadString);
 		
+		restClient = new RestClint();
 		closableHttpResponse = restClient.post(url, payloadString, headerMaps);
 		int statusCode = closableHttpResponse.getStatusLine().getStatusCode();
-		Assert.assertEquals(HTTP_STATUS_200, statusCode);
+		System.out.println(statusCode);
+		Assert.assertEquals(HTTP_STATUS_201, statusCode);
 		
 		String response = EntityUtils.toString(closableHttpResponse.getEntity(), "UTF-8");
 		JSONObject jobject = new JSONObject(response);
 		System.out.println("Response: " + jobject);
 		
-		Users responseUserObject = objectMapper.readValue(response, Users.class);
-		System.out.println(responseUserObject);
+		/*Users responseUserObject = objectMapper.readValue(response, Users.class);
+		System.out.println(responseUserObject);*/
 	}
 }

@@ -13,10 +13,11 @@ import org.apache.http.impl.client.HttpClients;
 
 public class RestClint {
 	CloseableHttpResponse closableHttpResponse;
+	CloseableHttpClient httpClient;
 
 	public CloseableHttpResponse get(String url) throws ClientProtocolException, IOException {
 		// Creating the connection with http client
-		CloseableHttpClient httpClient = HttpClients.createDefault();
+		httpClient = HttpClients.createDefault();
 
 		// Creating http get method
 		HttpGet httpGet = new HttpGet(url);
@@ -29,7 +30,7 @@ public class RestClint {
 	public CloseableHttpResponse get(String url, Map<String, String> headerMaps)
 			throws ClientProtocolException, IOException {
 		// Creating the connection with http client
-		CloseableHttpClient httpClient = HttpClients.createDefault();
+		httpClient = HttpClients.createDefault();
 
 		// Creating http get method
 		HttpGet httpGet = new HttpGet(url);
@@ -45,7 +46,7 @@ public class RestClint {
 
 	public CloseableHttpResponse post(String url, String entity, Map<String, String> headerMaps)
 			throws ClientProtocolException, IOException {
-		CloseableHttpClient closableHttpClient = HttpClients.createDefault();
+		httpClient = HttpClients.createDefault();
 		HttpPost httpPost = new HttpPost(url);
 		httpPost.setEntity(new StringEntity(entity));
 
@@ -53,7 +54,7 @@ public class RestClint {
 		for (Map.Entry<String, String> header : headerMaps.entrySet()) {
 			httpPost.addHeader(header.getKey(), header.getValue());
 		}
-		closableHttpResponse = closableHttpClient.execute(httpPost);
+		closableHttpResponse = httpClient.execute(httpPost);
 		return closableHttpResponse;
 	}
 }
