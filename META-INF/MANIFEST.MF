@@ -4,6 +4,5 @@ Bundle-Name: APITesting
 Bundle-SymbolicName: APITesting
 Bundle-Version: 1.0.0.qualifier
 Export-Package: com.apitesting.testcases,
- com.apitesting.xmlfiles,
  com.restapi.base,
  com.restapi.httpmethods

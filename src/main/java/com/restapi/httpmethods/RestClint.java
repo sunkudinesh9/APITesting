@@ -1,12 +1,14 @@
 package com.restapi.httpmethods;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -56,5 +58,15 @@ public class RestClint {
 		}
 		closableHttpResponse = httpClient.execute(httpPost);
 		return closableHttpResponse;
+	}
+
+	public void put(String url, String entity, Map<String, String> headerMaps) throws UnsupportedEncodingException {
+		httpClient = HttpClients.createDefault();
+		HttpPut httpPut = new HttpPut(url);
+
+		httpPut.setEntity(new StringEntity(entity));
+		for (Map.Entry<String, String> header : headerMaps.entrySet()) {
+			httpPut.addHeader(header.getKey(), header.getKey());
+		}
 	}
 }
